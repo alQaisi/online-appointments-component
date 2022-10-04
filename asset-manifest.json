@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/online-appointments-component/static/css/main.6826073e.css",
-    "main.js": "/online-appointments-component/static/js/main.7f6b4de6.js",
+    "main.js": "/online-appointments-component/static/js/main.8cc47e0c.js",
     "static/js/787.9db19d86.chunk.js": "/online-appointments-component/static/js/787.9db19d86.chunk.js",
     "index.html": "/online-appointments-component/index.html",
     "main.6826073e.css.map": "/online-appointments-component/static/css/main.6826073e.css.map",
-    "main.7f6b4de6.js.map": "/online-appointments-component/static/js/main.7f6b4de6.js.map",
+    "main.8cc47e0c.js.map": "/online-appointments-component/static/js/main.8cc47e0c.js.map",
     "787.9db19d86.chunk.js.map": "/online-appointments-component/static/js/787.9db19d86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6826073e.css",
-    "static/js/main.7f6b4de6.js"
+    "static/js/main.8cc47e0c.js"
   ]
 }
