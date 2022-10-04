@@ -5,7 +5,7 @@ import { ScheduleContext } from "../../context/Schedule.context";
 
 function DaysSlide(){
 
-    const { schedule }=useContext(ScheduleContext);
+    const { schedule, selectedDay, selectDay }=useContext(ScheduleContext);
 
     const width=useWindowWidth();
     const [divider,setDivider]=useState(5)
@@ -32,7 +32,9 @@ function DaysSlide(){
     
     const days=Children.toArray(schedule.map((item,index)=>{
         const {day,date}=item.availability;
-        return <Day status={index===0?"disabled":""} date={date.slice(0,2)}>{day.slice(0,3)}</Day>
+        if(index===0)
+            return <Day status="disabled" date={date.slice(0,2)}>{day.slice(0,3)}</Day>
+        return <Day status={index===selectedDay?"selected":""} onClick={()=>selectDay(index)} date={date.slice(0,2)}>{day.slice(0,3)}</Day>
     }))
 
     return(
@@ -42,7 +44,7 @@ function DaysSlide(){
                     {days}
                 </DaysContainer>
             </Container>
-            <Next status={(currentDays>(Math.floor(17/divider)*100)?"unactive":undefined)} onClick={()=>Navigate("next")}/>
+            <Next status={(currentDays===(Math.floor(schedule.length/divider)*100)?"unactive":undefined)} onClick={()=>Navigate("next")}/>
             <Previous status={currentDays===0?"unactive":undefined} onClick={Navigate}/>
         </div>
     );

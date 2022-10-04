@@ -37,6 +37,12 @@ button{
   color: #FFF;
   padding: 17px 0;
   border-radius: 14px;
+  pointer-events: none;
+  opacity: .65;
+}
+button.active{
+  pointer-events: initial;
+  opacity: 1;
 }
 button:hover{
   filter: opacity(.85);

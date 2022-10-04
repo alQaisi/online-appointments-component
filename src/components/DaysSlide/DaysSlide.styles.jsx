@@ -80,7 +80,7 @@ export const Day=styled.span`
 
 export const DaysContainer=styled.div`
     max-width: 100%;
-    padding: 5px 3px;
+    padding: 5px 4px;
     display: flex;
     gap: 0 11px;
     transform:translateX(-${props=>props.currentDays}%);

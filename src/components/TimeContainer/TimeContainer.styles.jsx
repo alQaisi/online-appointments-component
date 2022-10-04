@@ -1,4 +1,4 @@
-import styled,{ css } from "styled-components";
+import styled from "styled-components";
 
 import { StatusCheck } from "../DaysSlide/DaysSlide.styles";
 
@@ -18,4 +18,11 @@ export const Container=styled.div`
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap:9px 15px;
+    @media screen and (max-width:400px) {
+        gap:9px 12px;
+        ${Time}{
+            padding:9px 0;
+            font-size:.925rem;
+        }
+    }
 `;

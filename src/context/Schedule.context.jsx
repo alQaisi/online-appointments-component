@@ -6,6 +6,10 @@ export function ScheduleProvider({children}){
 
     const [schedule,setSchedule]=useState(undefined);
     const [selectedDay,selectDay]=useState(1);
+    const [selectedTime,selectTime]=useState(undefined);
+    const [isAlert,toggleAlert]=useState(false);
+
+    const currentDay=schedule && schedule[selectedDay];
 
     useEffect(()=>{
         fetch("https://cura-front-end-test.herokuapp.com/")
@@ -14,7 +18,12 @@ export function ScheduleProvider({children}){
             .then(res=>setSchedule(res.schedule))
             .catch(err=>alert("Please Try Again Later !"));
     },[]);
-    const value={schedule};
+
+    useEffect(()=>{
+        selectTime(undefined);
+    },[selectedDay])
+
+    const value={ schedule, selectedDay, selectDay, currentDay, selectTime, selectedTime, isAlert, toggleAlert };
     return(
         <ScheduleContext.Provider value={value}>{children}</ScheduleContext.Provider>
     );
